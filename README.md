@@ -6,3 +6,20 @@
 
 ![image](https://user-images.githubusercontent.com/58893102/186612371-7440f14d-d0e4-4af6-9e93-e44cf68f5f22.png)
 
+## Установка
+
+- создайте файл ```.env``` в корневом каталоге
+- положите в него:
+
+    ```TG_BOT_TOKEN``` - свой токен от бота
+
+    ```TG_MY_CHAT_ID``` - свой айди чата
+    
+    ```DEVMAN_API_TOKEN``` - токен от Devman
+
+## Запуск
+
+Запустите бота командой:
+
+```python main.py```
+
