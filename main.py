@@ -30,18 +30,21 @@ def main():
             response = requests.get(url, headers=headers, params=uploads)
             homework_review = response.json()
 
-            lessons_cheked = homework_review['new_attempts']
-            for lesson in lessons_cheked:
-                lesson_cheked_status = "Надо доработать" if lesson['is_negative'] else "Работат принята"
-                lesson_cheked_url = lesson['lesson_url']
+            if homework_review['status'] == 'timeout':
+                uploads['timestamp'] = homework_review['timestamp_to_request']
+                continue
+            else:
+                lessons_cheked = homework_review['new_attempts']
+                for lesson in lessons_cheked:
+                    lesson_cheked_status = "Надо доработать" if lesson['is_negative'] else "Работа принята"
+                    lesson_cheked_url = lesson['lesson_url']
 
-                message = f'Статус: {lesson_cheked_status}\nУрок: {lesson_cheked_url}'
-                tg_bot.send_message(chat_id=tg_chat_id, text=message)
+                    message = f'Статус: {lesson_cheked_status}\nУрок: {lesson_cheked_url}'
+                    tg_bot.send_message(chat_id=tg_chat_id, text=message)
 
         except requests.exceptions.ReadTimeout:
-            timestamp_to_request = response.json()['timestamp_to_request']
             uploads = {
-                'timestamp': timestamp_to_request
+                'timestamp': datetime.datetime.now().timestamp()
             }
             continue
         except ConnectionError:
