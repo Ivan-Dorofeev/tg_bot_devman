@@ -1,3 +1,4 @@
+import datetime
 import os
 from pprint import pprint
 
@@ -18,7 +19,9 @@ def main(api_devman_token, tg_token, tg_chat_id):
     headers = {
         'Authorization': authorization_token
     }
-    uploads = {}
+    uploads = {
+        'timestamp': datetime.datetime.now().timestamp()
+    }
 
     while True:
         try:
