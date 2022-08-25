@@ -1,6 +1,5 @@
 import datetime
 import os
-from pprint import pprint
 
 import requests
 import telegram
@@ -32,7 +31,6 @@ def main():
         try:
             response = requests.get(url, headers=headers, params=uploads)
             server_answer = response.json()
-            pprint(server_answer)
 
             lessons_cheked = server_answer['new_attempts']
             for lesson in lessons_cheked:
