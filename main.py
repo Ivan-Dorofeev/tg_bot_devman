@@ -12,7 +12,12 @@ def send_mail(tg_token, tg_chat_id, msg):
     tg_bot.send_message(chat_id=tg_chat_id, text=msg)
 
 
-def main(api_devman_token, tg_token, tg_chat_id):
+def main():
+    load_dotenv()
+    tg_chat_id = os.environ['TG_MY_CHAT_ID']
+    tg_token = os.environ['TG_BOT_TOKEN']
+    api_devman_token = os.environ['DEVMAN_API_TOKEN']
+
     url = 'https://dvmn.org/api/long_polling/'
     authorization_token = f'Token {api_devman_token}'
 
@@ -48,9 +53,4 @@ def main(api_devman_token, tg_token, tg_chat_id):
 
 
 if __name__ == '__main__':
-    load_dotenv()
-    tg_chat_id = os.environ['TG_MY_CHAT_ID']
-    tg_token = os.environ['TG_BOT_TOKEN']
-    api_devman_token = os.environ['DEVMAN_API_TOKEN']
-
-    main(api_devman_token, tg_token, tg_chat_id)
+    main()
