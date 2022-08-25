@@ -1,5 +1,6 @@
 import datetime
 import os
+import time
 
 import requests
 import telegram
@@ -44,6 +45,7 @@ def main():
             }
             continue
         except ConnectionError:
+            time.sleep(30)
             continue
 
 
