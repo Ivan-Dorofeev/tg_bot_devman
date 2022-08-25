@@ -6,16 +6,13 @@ import telegram
 from dotenv import load_dotenv
 
 
-def send_mail(tg_token, tg_chat_id, msg):
-    tg_bot = telegram.Bot(token=tg_token)
-    tg_bot.send_message(chat_id=tg_chat_id, text=msg)
-
-
 def main():
     load_dotenv()
     tg_chat_id = os.environ['TG_MY_CHAT_ID']
     tg_token = os.environ['TG_BOT_TOKEN']
     api_devman_token = os.environ['DEVMAN_API_TOKEN']
+
+    tg_bot = telegram.Bot(token=tg_token)
 
     url = 'https://dvmn.org/api/long_polling/'
     authorization_token = f'Token {api_devman_token}'
@@ -38,7 +35,7 @@ def main():
                 lesson_cheked_url = lesson['lesson_url']
 
                 message = f'Статус: {lesson_cheked_status}\nУрок: {lesson_cheked_url}'
-                send_mail(tg_token, tg_chat_id, message)
+                tg_bot.send_message(chat_id=tg_chat_id, text=message)
 
         except requests.exceptions.ReadTimeout:
             timestamp_to_request = response.json()['timestamp_to_request']
