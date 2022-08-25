@@ -30,9 +30,9 @@ def main():
     while True:
         try:
             response = requests.get(url, headers=headers, params=uploads)
-            server_answer = response.json()
+            homework_review = response.json()
 
-            lessons_cheked = server_answer['new_attempts']
+            lessons_cheked = homework_review['new_attempts']
             for lesson in lessons_cheked:
                 lesson_cheked_status = "Надо доработать" if lesson['is_negative'] else "Работат принята"
                 lesson_cheked_url = lesson['lesson_url']
