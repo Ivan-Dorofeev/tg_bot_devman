@@ -1,1 +1,1 @@
-bot: python3 main.py
+tgbot: python3 main.py
