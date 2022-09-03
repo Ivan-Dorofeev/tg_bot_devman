@@ -41,6 +41,9 @@ def main():
 
                     message = f'Статус: {lesson_cheked_status}\nУрок: {lesson_cheked_url}'
                     tg_bot.send_message(chat_id=tg_chat_id, text=message)
+                uploads = {
+                    'timestamp': datetime.datetime.now().timestamp()
+                }
 
         except requests.exceptions.ReadTimeout:
             uploads = {
