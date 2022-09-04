@@ -1,1 +1,23 @@
 
+2022-09-04 08:18:20,906 - main(16): Бот запущен
+2022-09-04 08:20:19,137 - main(16): Бот запущен
+2022-09-04 08:20:41,592 - main(16): Бот запущен
+2022-09-04 08:21:07,860 - main(16): Бот запущен
+2022-09-04 08:21:08,481 - main(69): division by zero
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/Devman/tg_bot_devman/main.py", line 67, in main
+    0/0
+ZeroDivisionError: division by zero
+2022-09-04 08:21:33,863 - main(16): Бот запущен
+2022-09-04 08:21:34,386 - main(69): division by zero
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/Devman/tg_bot_devman/main.py", line 67, in main
+    0/0
+ZeroDivisionError: division by zero
+2022-09-04 08:23:21,640 - main(16): Бот запущен
+2022-09-04 08:23:22,110 - main(69): 
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/Devman/tg_bot_devman/main.py", line 38, in main
+    raise TypeError
+TypeError
+2022-09-04 08:23:40,002 - main(16): Бот запущен

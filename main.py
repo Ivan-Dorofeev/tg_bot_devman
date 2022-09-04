@@ -64,6 +64,9 @@ def main():
             tg_bot.send_message(chat_id=tg_chat_id, text='Ошибка соединения')
             time.sleep(30)
             continue
+        except Exception as exc:
+            tg_bot.send_message(chat_id=tg_chat_id, text=exc)
+            continue
 
 
 if __name__ == '__main__':
