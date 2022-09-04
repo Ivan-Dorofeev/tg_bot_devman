@@ -21,6 +21,7 @@ def main():
     api_devman_token = os.environ['DEVMAN_API_TOKEN']
 
     tg_bot = telegram.Bot(token=tg_token)
+    tg_bot.send_message(chat_id=tg_chat_id, text='Бот запущен')
 
     url = 'https://dvmn.org/api/long_polling/'
     authorization_token = f'Token {api_devman_token}'
