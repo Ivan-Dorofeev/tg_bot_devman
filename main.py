@@ -61,7 +61,6 @@ def main():
 
                     message = f'Статус: {lesson_cheked_status}\nУрок: {lesson_cheked_url}'
                     tg_bot.send_message(chat_id=tg_chat_id, text=message)
-                    logger.info('ЕСТЬ СООБЩЕНИЕ ОТ ЛОГЕРА')
                 uploads = {
                     'timestamp': datetime.datetime.now().timestamp()
                 }
