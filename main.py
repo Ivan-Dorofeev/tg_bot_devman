@@ -7,7 +7,7 @@ import telegram
 from dotenv import load_dotenv
 import logging
 
-logger = logging.getLogger("tg_bot_logger>")
+logger = logging.getLogger("tg_bot_logger")
 
 
 class TelegramLogsHandler(logging.Handler):
