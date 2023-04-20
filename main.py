@@ -33,7 +33,6 @@ def main():
     logging.basicConfig(filename='tg_bot_log.log', format="%(asctime)s - %(funcName)s(%(lineno)d): %(message)s")
     logger.setLevel(logging.INFO)
     logger.addHandler(TelegramLogsHandler(tg_bot, tg_chat_id))
-    logger.warning('Бот запущен')
 
     url = 'https://dvmn.org/api/long_polling/'
     authorization_token = f'Token {api_devman_token}'
