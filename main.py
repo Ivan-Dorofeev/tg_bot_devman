@@ -30,7 +30,8 @@ def main():
 
     tg_bot = telegram.Bot(token=tg_token)
 
-    logging.basicConfig(filename='tg_bot_log.log', format="%(asctime)s - %(funcName)s(%(lineno)d): %(message)s")
+    logging.basicConfig(filename='tg_bot_log.log', format="%(asctime)s - %(funcName)s(%(lineno)d): %(message)s",
+                        filemode='w')
     logger.setLevel(logging.INFO)
     logger.addHandler(TelegramLogsHandler(tg_bot, tg_chat_id))
 
